@@ -58,4 +58,6 @@ function timeTracker() {
             $(this).assClass("future");
          }
      })
-}    timeTracker();
+}    
+// make sure to run the function outside the function xD
+timeTracker();
