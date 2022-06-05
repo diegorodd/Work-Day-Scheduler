@@ -18,10 +18,10 @@ var tasks = {
 
 $(document).ready(function () {
     $(".saveBtn").on("click", function () {
-        var text = $(this).siblings(".describtion").val();
+        var text = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
 
-        localStorage.setItem(time,text);
+        localStorage.setItem(time, text);
    })
 })
 // make sure to do military time for normal time
@@ -37,7 +37,7 @@ $("#hour15 .description").val(localStorage.getItem("hour 15"));
 $("#hour16 .description").val(localStorage.getItem("hour 16"));
 // would make a loop
 function timeTracker() {
-     var timeNow = moment().hour()
+     var timeNow = moment().hour();
 
      $(".time-block").each(function () {
          var blockTime = parseInt($(this).attr("id").split("hour")[1]);
@@ -57,8 +57,6 @@ function timeTracker() {
             $(this).removeClass("present");
             $(this).assClass("future");
          }
-         timeTracker();
-         console.log(timeTracker);
      })
-
+     timeTracker();
 }
